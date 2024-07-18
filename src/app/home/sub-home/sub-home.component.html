@@ -1,0 +1,28 @@
+<div>
+    <div class="mainC">This is sub home Home Page</div>
+    <div class="secondDiv">Welcome to Sub-Home Page</div>
+    <div>
+        <div class="midClass">You should see the beauty of universe</div>
+        <div class="Imgg">
+        <img src="https://facts.net/wp-content/uploads/2020/03/AdobeStock_105677222.jpeg" class="ImgDiv">
+    </div>
+    </div>
+
+    <div>
+        <div>Details</div>
+        <!-- <div>
+        <label>Your Planet</label>
+        <input type="text" [(ngModel)] = userPlanet>
+    </div> -->
+    <div>
+        <label for="item-input">Favourite Planet</label>
+        <input type="text"  id="item-input" #newItem>
+        <button (click)="addNewItem(newItem.value)">Add</button>
+    </div>
+    <div>
+        <label>Your Name</label>
+        <div>{{name}}</div>
+    </div>
+
+    </div>
+</div>

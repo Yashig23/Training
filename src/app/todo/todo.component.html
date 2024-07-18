@@ -1,0 +1,60 @@
+<div class="mainDiv">
+    <h3 class="heading">Add New Task</h3>
+    <div class="secDiv">
+        <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Task:</th>
+                        <th>Created By:</th>
+                        <!-- <th>Updated By:</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="text" formControlName="task"></td>
+                        <td><input type="text" formControlName="createdBy"></td>
+                        <!-- <td><input type="text" formControlName="updatedBy"></td> -->
+                    </tr>
+                </tbody>
+            </table>
+            <div>
+                <button type="submit">Add Task</button>
+            </div>
+        </form>
+
+        <h3>Task List</h3>
+        <div>
+            <button (click)="selectAll()">Select All</button>
+            <button (click)="cancelSelected()">Cancel</button>
+            <button (click)="markCompleted()">Mark as Completed</button>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Select</th>
+                    <th>ID</th>
+                    <th>Task</th>
+                    <th>Created By</th>
+                    <!-- <th>Updated By</th> -->
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let task of tasks; let i = index">
+                    <td><input type="checkbox" (click)="checked(task.id)" [(ngModel)]="task.checked"></td>
+                    <td>{{ task.id }}</td>
+                    <td *ngIf="!task.isEditing">{{ task.task }}</td>
+                    <td *ngIf="task.isEditing"><input [(ngModel)]="task.task"></td>
+                    <td>{{ task.createdBy }}</td>
+                    <td>{{ task.updatedBy }}</td>
+                    <td>
+                        <button *ngIf="task.isEditing" (click)="save(task.id)">Save</button>
+                        <button *ngIf="task.isEditing" (click)="cancelEdit(task.id)">Cancel</button>
+                        <button *ngIf="!task.isEditing" (click)="editTask(task.id)">Edit</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

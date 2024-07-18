@@ -1,0 +1,70 @@
+
+<div class="mainDiv">
+    <h3 class="heading">Add New Admin</h3>
+    <div class="secDiv">
+      <table>
+        <thead>
+          <tr>
+            <th>Name:</th>
+            <th>Created By:</th>
+            <th>Updated By:</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" [(ngModel)]="newAdminData.name"></td>
+            <td><input type="text" [(ngModel)]="newAdminData.createdBy"></td>
+            <td><input type="text" [(ngModel)]="newAdminData.updatedBy"></td>
+          </tr>
+        </tbody>
+      </table>
+      <div>
+        <button (click)="addAdmin()">Add Admin</button>
+      </div>
+      <div>
+      <ul>
+        <li><a routerLink="/admin/1">Mr. Bean</a></li>
+        <li><a routerLink="/admin/2">Mrs. Marry</a></li>
+        <li><a routerLink="/admin/3">Mr. Gupta</a></li>
+    </ul>
+  </div>
+  
+  <h3>Admin List</h3>
+  <div>
+    <button (click)="selectAll()">Select All</button>
+    <button (click)="deleteAll()">Delete</button>
+    <button (click)="cancleSelected()">Cancle</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Select</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Created By</th>
+        <th>Updated By</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let admin of admin; let i = index">
+        <td><input type="checkbox" (click)="checked(admin.getId())" [(ngModel)]="admin.checked"></td>
+        <td (change)="(admin.setId(i+1))">{{ i+1 }}</td>
+        <!-- <td>{{ admin.getId() }}</td> -->
+        <td *ngIf="!admin.isEditing()">{{ admin.getName() }}</td>
+        <td *ngIf="admin.isEditing()"><input [(ngModel)]="newAdminData.name"></td>
+        <td>{{ admin.getCreatedBy() }}</td>
+        <td>{{ admin.getUpdatedBy() }}</td>
+        <td>
+          <button (click)="deleteAdmin(admin.getId())">Delete</button>
+          <button *ngIf="admin.isEditing()" (click) = "save(admin.getId())">Save</button>
+          <button *ngIf="admin.isEditing()" (click) = "cancleEvent(admin.getId())">Cancle</button>
+          <button *ngIf="!admin.isEditing()" (click)="updateAdmin(admin.getId())">Edit
+          </button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+  
+  

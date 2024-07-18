@@ -1,0 +1,15 @@
+<div>
+    <div class="Heading"> Reactive Form</div>
+
+<form [formGroup]="addReactiveForm">
+    <div>
+    <label for="admin-name">Admin Name</label>
+    <input type="text" formControlName="adminName" id="admin-name">
+</div>
+<div>
+    <label for="admin-des">Admin Description</label>
+    <textarea formControlName="adminDescription" id="admin-des"></textarea>
+    <button (click)="saveReactive()" [disabled]="!addReactiveForm.valid">Save</button>
+</div>
+</form>
+</div>

@@ -1,0 +1,21 @@
+<div>
+    <div class="mainC"> Home Page</div>
+    <div class="secondDiv">Welcome to Home Page</div>
+    <div class="btnClass">
+        <a routerLink="subHome">Click here</a>
+    </div>
+    <div>
+        <label>Your Name</label>
+        <input type="text" [(ngModel)] = userName>
+    </div>
+    <div class="bottomSec">
+    <!-- <div><button>Save</button></div> -->
+    </div>
+    <div>{{FavPlanet}}</div>
+</div>
+
+<app-sub-home [name] = "userName" (FirstEvent)="addEvent($event)"></app-sub-home>
+<app-reactive></app-reactive>
+
+
+<router-outlet></router-outlet>
