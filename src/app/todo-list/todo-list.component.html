@@ -1,16 +1,19 @@
 <p>todo-list works!</p>
 <ul>
   <li *ngFor="let iri of completedList">
-    <p>{{iri|json}}</p>
-    <!-- <a>{{i.task}}</a> -->
+    <a [routerLink]="['/todo_list', iri.id]">
+        {{iri.id}} - 
+        {{iri.task}}
+    </a>
   </li>
 </ul>
 
 <ul>
-    <li *ngFor="let list of listss">
+    <li *ngFor="let list of taskList">
         <a>{{list.id}}</a>
         <a>{{list.name}}</a>
         <a>{{list.class}}</a>
     </li>
 </ul>
 
+<!-- <router-outlet></router-outlet> -->

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {TaskListService} from '../task-list.service'
+import { CompletedtaskService } from '../completedtask.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -8,15 +8,14 @@ import {TaskListService} from '../task-list.service'
 })
 export class TodoListComponent {
   completedList: any[]=[];
-  listss: any[] =[];
+  taskList: any[] =[];
 
-  constructor(private taskService: TaskListService){
+  constructor(private taskService: CompletedtaskService){
   }
 
   ngOnInit(){
-    
     this.completedList = this.taskService.getCompleteTaskList();
-    this.listss = this.taskService.showTasks();
+    this.taskList = this.taskService.showTasks();
     console.log(this.completedList);
   }
 

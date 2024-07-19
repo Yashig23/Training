@@ -1,20 +1,27 @@
 <div class="mainDiv">
+    <h1 *appNot="true">True</h1>
+    <h1 *appNot="false">False</h1>
     <h3 class="heading">Add New Task</h3>
     <div class="secDiv">
-        <form [formGroup]="taskForm" (ngSubmit)="addTask()">
+        <form [formGroup]="taskForm" (ngSubmit)="Addtask()">
             <table>
                 <thead>
                     <tr>
                         <th>Task:</th>
                         <th>Created By:</th>
-                        <!-- <th>Updated By:</th> -->
+                        <th>Gender</th>
+                        <th>Created At</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td><input type="text" formControlName="task"></td>
                         <td><input type="text" formControlName="createdBy"></td>
-                        <!-- <td><input type="text" formControlName="updatedBy"></td> -->
+                        <select formControlName="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                        <td><input type="date" formControlName="createdAt"></td>
                     </tr>
                 </tbody>
             </table>
@@ -25,9 +32,9 @@
 
         <h3>Task List</h3>
         <div>
-            <button (click)="selectAll()">Select All</button>
-            <button (click)="cancelSelected()">Cancel</button>
-            <button (click)="markCompleted()">Mark as Completed</button>
+            <button (click)="Selectall()">Select All</button>
+            <button (click)="Cancelselected()">Cancel</button>
+            <button (click)="Markcompleted()">Mark as Completed</button>
         </div>
         <table>
             <thead>
@@ -36,22 +43,26 @@
                     <th>ID</th>
                     <th>Task</th>
                     <th>Created By</th>
-                    <!-- <th>Updated By</th> -->
+                    <th>Created At</th>
+                    <th>Gender</th>
                     <th>Actions</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody appAttrDirective>
                 <tr *ngFor="let task of tasks; let i = index">
-                    <td><input type="checkbox" (click)="checked(task.id)" [(ngModel)]="task.checked"></td>
+                    <td><input type="checkbox" (click)="Checked(task.id)" [(ngModel)]="task.checked"></td>
                     <td>{{ task.id }}</td>
+                   
                     <td *ngIf="!task.isEditing">{{ task.task }}</td>
                     <td *ngIf="task.isEditing"><input [(ngModel)]="task.task"></td>
                     <td>{{ task.createdBy }}</td>
-                    <td>{{ task.updatedBy }}</td>
+                    <td>{{task.createdAt | date}}</td>
+                    <td>{{task.gender}}</td>
+
                     <td>
-                        <button *ngIf="task.isEditing" (click)="save(task.id)">Save</button>
-                        <button *ngIf="task.isEditing" (click)="cancelEdit(task.id)">Cancel</button>
-                        <button *ngIf="!task.isEditing" (click)="editTask(task.id)">Edit</button>
+                        <button *ngIf="task.isEditing" (click)="Save(task.id)">Save</button>
+                        <button *ngIf="task.isEditing" (click)="Canceledit(task.id)">Cancel</button>
+                        <button *ngIf="!task.isEditing" (click)="Edittask(task.id)">Edit</button>
                     </td>
                 </tr>
             </tbody>

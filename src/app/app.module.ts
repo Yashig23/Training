@@ -13,9 +13,12 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SubHomeComponent } from './home/sub-home/sub-home.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { NewIdComponent } from './new-id/new-id.component';
+import { GenderPipe } from './gender.pipe';
+import { AttrDirectiveDirective } from './attr-directive.directive';
+import { StructDirectiveDirective } from './struct-directive.directive';
+import { TodoComponent } from './todo/todo.component';
+import { DetailsComponent } from './details/details.component';
 // import { TaskService } from './task.service';
 
 @NgModule({
@@ -31,7 +34,10 @@ import { NewIdComponent } from './new-id/new-id.component';
     ReactiveComponent,
     TodoComponent,
     TodoListComponent,
-    NewIdComponent,
+    GenderPipe,
+    StructDirectiveDirective,
+    AttrDirectiveDirective,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -9,7 +9,7 @@ import { SubHomeComponent } from './home/sub-home/sub-home.component';
 import { authGuard } from './auth.guard';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
-import { NewIdComponent } from './new-id/new-id.component';
+import { DetailsComponent } from './details/details.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/HomeComponent', pathMatch: 'full'}, // redirect route
@@ -22,17 +22,12 @@ const routes: Routes = [
   // {
   //   path:'admin/:id', component: NewIdComponent    // child route and parametric route
   // },
-  {path: 'todo', component: TodoComponent,
-    children: [
-      {
-        path:'prod', component: ProductComponent
-      }
-    ]
-
-
+  {path: 'todo', component: TodoComponent,},
+  {path: 'todo_list', component: TodoListComponent, 
 
   },
-  {path: 'todo_list', component: TodoListComponent},
+  {path: 'todo_list/:id', component: DetailsComponent},
+  // {path: 'todo_list/:id', component: NewIdComponent},
   // {path: 'admin/:id', component: NewIdComponent},
   {path: '**', component: PagenotfoundComponent} // wildcart route
 ];
