@@ -4,6 +4,7 @@
     <h3 class="heading">Add New Task</h3>
     <div class="secDiv">
         <form [formGroup]="taskForm" (ngSubmit)="Addtask()">
+            <!-- <div formGroupName="userData"> -->
             <table>
                 <thead>
                     <tr>
@@ -26,9 +27,17 @@
                 </tbody>
             </table>
             <div>
-                <button type="submit">Add Task</button>
+                <button type="submit" [disabled]="!taskForm.valid">Add Task</button>
             </div>
-        </form>
+            <div>
+                <button (click)="Addnewrow()">Add New Row</button>
+            </div>
+            <!--form array name-->
+            <div>
+                <button (click)="Addhobby()">Add Hobby</button>
+            </div>
+        <!-- </div> -->
+        </form> 
 
         <h3>Task List</h3>
         <div>

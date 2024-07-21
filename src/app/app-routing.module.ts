@@ -10,6 +10,9 @@ import { authGuard } from './auth.guard';
 import { TodoComponent } from './todo/todo.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { DetailsComponent } from './details/details.component';
+import { ObservableComponent } from './observable/observable.component';
+import { ProfileModule } from './profile/profile.module';
+import { ContactsComponent } from './contacts/contacts.component';
 
 const routes: Routes = [
   {path:'', redirectTo: '/HomeComponent', pathMatch: 'full'}, // redirect route
@@ -17,18 +20,12 @@ const routes: Routes = [
   {path:'home/subHome', component: SubHomeComponent },
   {path:'aboutUs', component: ProductComponent },
   {path:'contactUs', component: CategoryComponent},
-  // {path: 'admin', component: Category2Component, canActivate: [authGuard], 
-  // },
-  // {
-  //   path:'admin/:id', component: NewIdComponent    // child route and parametric route
-  // },
   {path: 'todo', component: TodoComponent,},
-  {path: 'todo_list', component: TodoListComponent, 
-
-  },
+  {path: 'todo_list', component: TodoListComponent},
+  {path: 'observer', component:ObservableComponent},
+  {path: 'profile', loadChildren: ()=> import('./profile/profile.module').then(m => m.ProfileModule)},
+  {path: 'contact', component: ContactsComponent},
   {path: 'todo_list/:id', component: DetailsComponent},
-  // {path: 'todo_list/:id', component: NewIdComponent},
-  // {path: 'admin/:id', component: NewIdComponent},
   {path: '**', component: PagenotfoundComponent} // wildcart route
 ];
 

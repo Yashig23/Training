@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
-
+import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
@@ -19,7 +19,8 @@ import { AttrDirectiveDirective } from './attr-directive.directive';
 import { StructDirectiveDirective } from './struct-directive.directive';
 import { TodoComponent } from './todo/todo.component';
 import { DetailsComponent } from './details/details.component';
-// import { TaskService } from './task.service';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -44,9 +45,11 @@ import { DetailsComponent } from './details/details.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
+    CommonModule
   ],
   providers: [
-    // TaskService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}, //hash location strategy
     provideClientHydration()
   ],
   bootstrap: [AppComponent]

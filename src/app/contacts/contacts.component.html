@@ -1,0 +1,22 @@
+<h1>Contacts works</h1>
+<ul *ngFor="let contact of contactList">
+    <li>{{contact.firstName}}</li>
+    <li>{{contact.lastName}}</li>
+</ul>
+
+<ul *ngFor="let cont of conatactList2">
+    <li>{{cont.firstName}}</li>
+    <li>{{cont.lastName}}</li>
+</ul>
+
+<div>
+    <p>{{firstName}}</p>
+</div>
+
+<h3>Create New Contact</h3>
+<form #addNewContactForm="ngForm" (submit)=addNewContactForm(addNewContactForm)>
+    <input type="text" class="form-control" name="id" required ngModel>
+    <input type="text" class="form-control" name="firstName" required ngModel>
+    <input type="text" class="form-control" name="lastName" required ngModel>
+    <button class="form-control" [disabled]="!addNewContactForm.valid">Add New Contact</button>
+</form>

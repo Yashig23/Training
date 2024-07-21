@@ -1,0 +1,27 @@
+{
+    "contacts": [
+        {"id": 1,
+         "firstName": "Yashi",
+         "lastName": "Gupta"
+        },
+        {
+        "id": 1,
+         "firstName": "Khushi",
+         "lastName": "Gupta"
+        },
+        {
+            "id": 1,
+            "firstName": "Zoya",
+            "lastName": "Gupta"
+        }
+    ],
+    "comments":[
+        {"id":1,
+        "comments": "You are worthy" 
+    },
+    {
+        "id":2,
+        "comments": "You are talented"
+    }
+    ]
+}
