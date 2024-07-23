@@ -1,0 +1,138 @@
+{
+  "categories": [
+    {
+      "id": "l603",
+      "formDescription": "Food",
+      "createdAt": "2024-07-22"
+    },
+    {
+      "id": "p98j",
+      "formDescription": "Clothes",
+      "createdAt": "2024-06-22"
+    },
+    {
+      "id": "j980",
+      "formDescription": "Lens",
+      "createdAt": "2024-07-20"
+    },
+    {
+      "id": "b909",
+      "formDescription": "paan",
+      "createdAt": "2024-07-23T13:52:25.077Z",
+      "subCategories": []
+    }
+  ],
+  "products": [
+    {
+      "brandName": "Herky",
+      "name": "tshirt",
+      "categoryId": "897h",
+      "sellingPrice": "1000",
+      "actualPrice": "2000",
+      "discount": "50%",
+      "productDescription": "Asthetic shirt",
+      "images": [],
+      "id": "ef3b"
+    },
+    {
+      "id": "hg45",
+      "brandName": "bata",
+      "name": "sleepr",
+      "categoryId": "sht3",
+      "sellingPrice": "2400",
+      "actualPrice": "1200",
+      "createdAt": "2024-07-22T13:41:31.860Z",
+      "discount": 50,
+      "productDescription": "best",
+      "images": [
+        "kkkkk"
+      ]
+    },
+    {
+      "id": "8887",
+      "brandName": "h n m",
+      "name": "T shirt",
+      "categoryId": "gy56",
+      "sellingPrice": "3200",
+      "actualPrice": "1200",
+      "createdAt": "2024-07-22T13:59:05.745Z",
+      "discount": 20,
+      "productDescription": "nice shirt",
+      "images": [
+        "jjjjj",
+        "aaa"
+      ]
+    },
+    {
+      "brandName": "ahoora",
+      "name": "ahoora soap",
+      "categoryId": "56hg",
+      "sellingPrice": "789",
+      "actualPrice": "456",
+      "discount": 0,
+      "productDescription": "best in town",
+      "images": [
+        "klllllll",
+        "yyyyyyy",
+        "iiiiiii"
+      ],
+      "id": "771a"
+    },
+    {
+      "brandName": "joy",
+      "name": "body lotion",
+      "categoryId": "hjy4",
+      "sellingPrice": "700",
+      "actualPrice": "1200",
+      "discount": 30,
+      "productDescription": "body lotion",
+      "images": [
+        "nhhhhhh",
+        "hhhhh"
+      ],
+      "id": "365f"
+    },
+    {
+      "brandName": "LG",
+      "name": "LED TV",
+      "categoryId": null,
+      "sellingPrice": 789,
+      "actualPrice": 20,
+      "discount": 10,
+      "productDescription": "best in town",
+      "images": [
+        "asdkmk 1",
+        "lkmcsakm2"
+      ],
+      "id": "6669"
+    },
+    {
+      "brandName": "Asus",
+      "name": "Rog",
+      "categoryId": "g785",
+      "sellingPrice": 45000,
+      "actualPrice": 50000,
+      "discount": 10,
+      "productDescription": "best in town",
+      "images": [
+        null,
+        "kcsnjnasc1",
+        "lkdmqlwkmdlkq2"
+      ],
+      "id": "a077"
+    },
+    {
+      "id": "cf52",
+      "brandName": "vistas",
+      "name": "hari",
+      "categoryId": "b909",
+      "sellingPrice": 789,
+      "actualPrice": 980,
+      "discount": 19.49,
+      "productDescription": "okay okay",
+      "images": [
+        "jjjj"
+      ]
+    }
+  ]
+}

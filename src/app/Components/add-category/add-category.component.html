@@ -1,0 +1,30 @@
+<section>
+  <form [formGroup]="categoryForm" (ngSubmit)="SaveForm()">
+    <table>
+      <tr>
+        <td><label for="formDescription">Category Name:</label></td>
+        <td><input id="formDescription" type="text" formControlName="formDescription" placeholder="Category Name" class="input-description"></td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <div formArrayName="subCategories">
+            <table>
+              <tr *ngFor="let subCategory of subCategories.controls; let i = index">
+                <td><input [formControlName]="i" placeholder="Sub Category Name"></td>
+                <td><button type="button" (click)="removeSub(i)">Remove</button></td>
+              </tr>
+            </table>
+            <button type="button" (click)="addSubCat()">Add Sub Category</button>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button type="submit" class="subBtn" [disabled]="!categoryForm.valid">Submit</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</section>
+
+  

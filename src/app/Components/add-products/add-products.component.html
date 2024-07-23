@@ -1,0 +1,61 @@
+<section>
+  <div>
+    <form [formGroup]="productForm" (ngSubmit)="SaveForm()">
+      <table>
+        <tr>
+          <td><label for="brandName">Brand Name:</label></td>
+          <td><input id="brandName" type="text" formControlName="brandName" placeholder="Brand Name"></td>
+        </tr>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input id="name" type="text" formControlName="name" placeholder="Name"></td>
+        </tr>
+        <tr>
+          <td><label for="categoryId">Category:</label></td>
+          <td>
+            <select id="categoryId" formControlName="categoryId">
+              <option *ngFor="let category of categoryListPro" [value]="category.id">
+                {{ category.formDescription }}
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="actualPrice">Actual Price:</label></td>
+          <td><input id="actualPrice" type="number" formControlName="actualPrice" placeholder="Actual Price"></td>
+        </tr>
+        <tr>
+          <td><label for="sellingPrice">Selling Price:</label></td>
+          <td><input id="sellingPrice" type="number" formControlName="sellingPrice" placeholder="Selling Price"></td>
+        </tr>
+        
+        <tr>
+          <td><label for="discount">Discount:</label></td>
+          <td><div id="discount" type="number" formControlName="discount" placeholder="Discount">{{db}}</div></td>
+        </tr>
+        <tr>
+          <td><label for="productDescription">Product Description:</label></td>
+          <td><input id="productDescription" type="text" formControlName="productDescription" placeholder="Product Description"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <div formArrayName="images">
+              <table>
+                <tr *ngFor="let image of images.controls; let i = index">
+                  <td><input [formControlName]="i" type="text" placeholder="Image URL"></td>
+                  <td><button type="button" (click)="removeImage(i)">Remove</button></td>
+                </tr>
+              </table>
+              <button type="button" (click)="addImage()">Add Image</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit" [disabled]="!productForm.valid">Submit</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</section>

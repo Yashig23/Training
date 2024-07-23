@@ -1,0 +1,37 @@
+<p>product works!</p>
+
+<h4>List of Products</h4>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Brand Name</th>
+      <th>Name</th>
+      <th>Selling Price</th>
+      <th>Actual Price</th>
+      <th>Discount</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pro of productList; let i = index">
+      <td>{{i + 1}}</td>
+      <td>{{pro.brandName}}</td>
+      <td>{{pro.name}}</td>
+      <td>{{pro.sellingPrice}}</td>
+      <td>{{pro.actualPrice}}</td>
+      <td>{{pro.discount}}</td>
+      <td>{{pro.productDescription}}</td>
+      <td>
+        <button [routerLink]="['/edit-product', pro.id]">Edit</button>
+        <button (click)="deleteProducts(pro.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div>Create New Product</div>
+<div>
+  <button routerLink="/add-product">Add New Product</button>
+</div>
